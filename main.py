@@ -9,7 +9,7 @@ def generate_flow_run_name():
     parameters = flow_run.parameters
     repo_name = parameters['repo_name']
 
-    date = datetime.datetime.utcnow()
+    date = datetime.utcnow()
 
     return f"{flow_name}-{repo_name}-on-{date:%A}"
 
