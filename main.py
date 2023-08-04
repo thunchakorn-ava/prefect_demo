@@ -58,10 +58,7 @@ def get_repo_info(repo_name: str = "PrefectHQ/prefect"):
     # logger.info(f"Forks 🍴 : {repo['forks_count']}")
     # logger.info(f"Average open issues per user 💌 : {issues_per_user:.2f}")
 
-    return {
-        "stars": repo['stargazers_count'],
-        "forks": repo['forks_count']
-    }
+    return repo['stargazers_count']
 
 if __name__ == "__main__":
     get_repo_info()
