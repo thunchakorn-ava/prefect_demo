@@ -14,8 +14,8 @@ def generate_flow_run_name():
     return f"{flow_name}-{repo_name}-on-{date:%A}"
 
 @task(
-    # cache_key_fn=task_input_hash,
-    # cache_expiration=timedelta(hours=1)
+    cache_key_fn=task_input_hash,
+    cache_expiration=timedelta(hours=1)
 )
 def get_url(url: str, params: dict = None):
     response = httpx.get(url, params=params)
@@ -58,7 +58,7 @@ def get_repo_info(repo_name: str = "PrefectHQ/prefect"):
     # logger.info(f"Forks 🍴 : {repo['forks_count']}")
     # logger.info(f"Average open issues per user 💌 : {issues_per_user:.2f}")
 
-    return repo['stargazers_count']
+    # return repo['stargazers_count']
 
 if __name__ == "__main__":
     get_repo_info()
