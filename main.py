@@ -52,10 +52,11 @@ def get_repo_info(repo_name: str = "PrefectHQ/prefect"):
     issues_per_user = len(issues) / len(set([i["user"]["id"] for i in issues]))
 
     logger = get_run_logger()
-    logger.info(f"PrefectHQ/prefect repository statistics 🤓:")
-    logger.info(f"Stars 🌠 : {repo['stargazers_count']}")
-    logger.info(f"Forks 🍴 : {repo['forks_count']}")
-    logger.info(f"Average open issues per user 💌 : {issues_per_user:.2f}")
+    logger.info('A'*10)
+    # logger.info(f"PrefectHQ/prefect repository statistics 🤓:")
+    # logger.info(f"Stars 🌠 : {repo['stargazers_count']}")
+    # logger.info(f"Forks 🍴 : {repo['forks_count']}")
+    # logger.info(f"Average open issues per user 💌 : {issues_per_user:.2f}")
 
     return {
         "stars": repo['stargazers_count'],

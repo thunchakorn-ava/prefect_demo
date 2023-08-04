@@ -15,19 +15,21 @@ push: null
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
 - prefect.deployments.steps.git_clone:
-    repository: https://github.com/thunchakorn-ava/prefect_demo.git
+    repository: https://github.com/thunchakorn-ava/prefect_demo
     branch: main
+    access_token: null
 
 # the deployments section allows you to provide configuration for deploying flows
 deployments:
-- name: get_repo_info_deployment
+- name: get_repo_info
   version: null
   tags: []
-  description: Get a repository informations
+  description: null
+  schedule: {}
+  flow_name: null
   entrypoint: main.py:get_repo_info
   parameters: {}
   work_pool:
-    name: docker_work_pool
+    name: null
     work_queue_name: null
     job_variables: {}
-  schedule: null
