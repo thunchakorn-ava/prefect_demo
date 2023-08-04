@@ -14,8 +14,8 @@ def generate_flow_run_name():
     return f"{flow_name}-{repo_name}-on-{date:%A}"
 
 @task(
-    cache_key_fn=task_input_hash,
-    cache_expiration=timedelta(hours=1)
+    # cache_key_fn=task_input_hash,
+    # cache_expiration=timedelta(hours=1)
 )
 def get_url(url: str, params: dict = None):
     response = httpx.get(url, params=params)
